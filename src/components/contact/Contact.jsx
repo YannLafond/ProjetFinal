@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion"; 
 import burger from "../../assets/burger2.png"; 
 import Popup from 'reactjs-popup';
-//import { delay } from "@reduxjs/toolkit/dist/utils";
+
 
 
 function Contact() {

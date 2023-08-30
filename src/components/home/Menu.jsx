@@ -25,15 +25,17 @@ const Menu = () => {
                     itemNum={2} 
                     burgerSrc={burger2}
                     price={500} 
-                    title="Cheese Burger vegane" delay={0.5} 
-                    handler={addToCartHandler} 
+                    title="Cheese Burger vegane" 
+                    handler={addToCartHandler}
+                    delay={0.5}  
                 /> 
                 <MenuCard 
                     itemNum={3} 
                     burgerSrc={burger3}
                     price={1800} 
-                    title="Cheese Burger avec frites" delay={0.8} 
-                    handler={addToCartHandler} 
+                    title="Cheese Burger avec frites"  
+                    handler={addToCartHandler}
+                    delay={0.8} 
                 /> 
             </div> 
         </section> 
