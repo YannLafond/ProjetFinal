@@ -1,8 +1,15 @@
-import { configureStore } from "@reduxjs/toolkit";
-import burgerReducer from "./burgerSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import cartReducer from './redux/cart';
+import ordersReducer from './redux/order';
 
-export const store = configureStore({
-    reducer: {
-        burgerReducer,
-    },
+const rootReducer = {
+    cart: cartReducer,
+    orders: ordersReducer
+};
+
+const store = configureStore({
+    reducer: rootReducer,
+    
 });
+
+export default store;

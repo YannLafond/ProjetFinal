@@ -11,20 +11,38 @@ const burgerSlice = createSlice({
     initialState,
     reducers: {
         addBurger(state, action) {
-            state.burgers.push({...action.payload, id: uuidv4()});
+            
+            const itemIndex = state.findIndex(item => item.id === action.payload.id);
+
+            if (itemIndex !== -1) {                
+                state[itemIndex].quantity += 1;
+
+            } else {                
+                state.push({
+                    id: action.payload.id,
+                    title: action.payload.title,
+                    img: action.payload.img,
+                    price: action.payload.price,
+                    quantity: 1
+                });
+            }
         },
+    },
         deleteBurger(state, action){
-            state.burgers = state.burgers.filter((burger) => burger.id !== action.payload.id);
+        
+            const itemIndex = state.findIndex(item => item.id === action.payload.id);
+
+            if (itemIndex !== -1) {
+                if (state[itemIndex].quantity === 1) {
+                    state.splice(itemIndex, 1);
+                } else {
+                    state[itemIndex].quantity -= 1;
+                }
+            }
         },
-        updateBurger(state, action){
-            state.burgers = state.burgers.map((burger) => burger.id === action.payload.id ? action.payload : burger);
-        },
-        addToCart(state, action){
-            state.cartcount++
-        }
-    }
+    
 });
 
-export const {addBurger, deleteBurger, updateBurger} = burgerSlice.actions
+export const {addBurger, deleteBurger} = burgerSlice.actions
 
 export default burgerSlice.reducer;
