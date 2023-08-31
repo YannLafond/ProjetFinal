@@ -43,7 +43,7 @@ return (
                             delay: 0.4,
                         }}
                     >
-                        Explore Menu
+                        Découvrir nos burgers
                     </motion.a>
                 </section>
                 

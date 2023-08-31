@@ -38,7 +38,7 @@ const Shipping = () => {
 
               <select>
                 <option value="">Etat/Région</option>                
-                {State && State.getStatesOfCountry("IN").map((i) =>( 
+                {State && State.getStatesOfCountry().map((i) =>( 
                 <option value="{i.isoCode}" key="{i.isoCode}">
                   {i.name}
                 </option>

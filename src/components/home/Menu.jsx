@@ -1,10 +1,15 @@
 import React from "react"; 
+import { addBurger } from "../redux/burgersSlice"
+import { useDispatch } from "react-redux";
 import MenuCard from "./MenuCard"; 
 import data from "../../data"
 
 
 const Menu = () => { 
-    const addToCartHandler = (itemNum) => {}; 
+    const dispatch = useDispatch();
+    const addToCartHandler = (itemNum) => {
+        dispatch(addBurger(itemNum));
+    }; 
     
     return ( 
         <section id="menu"> 
@@ -21,9 +26,7 @@ const Menu = () => {
                             delay={item.delay} 
                         />
                     )
-                })}
-                
-            
+                })}            
             </div> 
         </section> 
     ); 

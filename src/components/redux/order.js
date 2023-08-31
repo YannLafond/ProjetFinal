@@ -20,4 +20,4 @@ const order = createSlice({
 });
 
 export const { addOrder, clearOrder } = order.actions;
-export default ordersSlice.reducer;
+export default order.reducer;

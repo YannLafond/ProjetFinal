@@ -1,14 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4} from "uuid";
 
-const initialState = {
-    burgers: [],
-    cartcount: 0,
-}
+
+const initialState = [];
+
+
 
 const burgerSlice = createSlice({
     name: "burgers",
-    initialState,
+    initialState: initialState,
     reducers: {
         addBurger(state, action) {
             
@@ -43,6 +42,6 @@ const burgerSlice = createSlice({
     
 });
 
-export const {addBurger, deleteBurger} = burgerSlice.actions
+export const {addBurger, deleteBurger} = burgerSlice.actions;
 
 export default burgerSlice.reducer;
